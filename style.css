@@ -1,12 +1,13 @@
 * {
     background: #ebc8b2;
+    font-family: 'Helvetica Neue', sans-serif;
 }
 
-.topbar {
+#topbar {
     margin-top: 0px;
 }
 
-.quizBox {
+#quizBox {
     padding-top: 10%;
 }
 
@@ -29,7 +30,7 @@ h2 {
     text-align: center;
 }
 
-.startQuiz {
+#startQuiz {
     font-family: 'Helvetica Neue', sans-serif; 
     font-size: 20px; 
     border-radius: 20px;
@@ -37,6 +38,6 @@ h2 {
     padding-right: 20px;
 }
 
-.highScores {
+#highScores {
     margin-left: 0px;
 }

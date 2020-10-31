@@ -9,22 +9,22 @@
 <body>
 
     <!-- top bar -->
-    <div class="topBar">
+    <div id="topBar">
     <!-- View Highscores -->
         <div class="highScores" style="position: relative; float: left; top: 0px; font-family: 'Helvetica Neue', sans-serif";>
 
-            <a href="#">View Highscores</a>
+            <a href="#" style="text-decoration: none;">View Highscores</a>
 
         </div>
 
     <!-- Timer -->
-        <div class="timer" style="position: relative; float: right; top: 0px; display: none; font-family: 'Helvetica Neue', sans-serif;"></div>
+        <div id="timer" style="position: relative; float: right; top: 0px; display: none; font-family: 'Helvetica Neue', sans-serif; font-weight: bold;"></div>
 
     </div>
     
 
     <!-- Start Game-->
-    <div class="quizBox" style="clear: both;">
+    <div id="quizBox" style="clear: both; display: block;">
         
         <h1>The Kim Kardashian Quiz.</h1>
         
@@ -32,9 +32,22 @@
         
         <!-- Start Game Button -->
         <div style="text-align:center;">
-            <button class="startQuiz">Start.</button>
+            <button id="startQuiz">Start.</button>
         </div>
     </div>
+
+    <div id="showQuestions" style="display: none;">
+        <div id="question"></div>
+        <div id="choices">
+            <div class="a"></div>
+            <div class="b"></div>
+            <div class="c"></div>
+            <div class="d"></div>
+        </div>
+    
+    </div>
+
+
 
    
 
