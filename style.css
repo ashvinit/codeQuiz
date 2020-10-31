@@ -2,8 +2,12 @@
     background: #ebc8b2;
 }
 
+.topbar {
+    margin-top: 0px;
+}
+
 .quizBox {
-    margin-top: 20%;
+    padding-top: 10%;
 }
 
 h1 {
