@@ -8,11 +8,6 @@ var question = document.querySelector("#question");
 var choices = document.querySelector("#choices");
 var questionNumber = 0;
 var score = 0;
-var lastQuestionIndex = myQuestions.length -1;
-var currentQuestionIndex = 0;
-
-
-var secondsLeft = 10;
 
 //array of questions
 var myQuestions = [
@@ -69,9 +64,40 @@ var myQuestions = [
     }
 ];
 
+//display questions
+var lastQuestionIndex = myQuestions.length -1;
+var currentQuestionIndex = 0;
+
+function renderQuestion () {
+    let q = questions[currentQuestionIndex];
+    myQuestions.innerHTML = q.question;
+    myQuestions.innerHTML = q.choices;
+
+}
+
+function checkAnswer(answer) {
+    if(question[currentQuestionIndex].correct == answer){
+        score++
+        correctAnswer();
+    } else{
+        wrongAnswer();
+    }
+if(currentQuestionIndex < lastQuestionIndex){
+    questionNumber = 0;
+    currentQuestionIndex++;
+    questionRender();
+} else{
+    clearInterval(TIMER);
+    scoreRender();
+}
+}
+
 
 
 //start timer
+
+var secondsLeft = 10;
+
 function startTimer() {
     timerEl.style.display = "block";
     var timerInterval = setInterval(function() {
