@@ -82,3 +82,13 @@ function renderQuestion () {
     c.innerHTML = q.c;
     d.innerHTML = q.d;
 }
+
+//remove the startScreen display
+startScreen.style.display = "none";
+
+//function to display questions on screen
+renderQuestion();
+
+//display quixBox
+quizBox.style.display = "block";
+
