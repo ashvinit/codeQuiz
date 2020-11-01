@@ -75,6 +75,8 @@ function renderQuestion () {
 
 }
 
+
+//function to check each answer and increase score if answer is correct
 function checkAnswer(answer) {
     if(question[currentQuestionIndex].correct == answer){
         score++
@@ -96,21 +98,6 @@ if(currentQuestionIndex < lastQuestionIndex){
 
 //start timer
 
-var secondsLeft = 10;
-
-function startTimer() {
-    timerEl.style.display = "block";
-    var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timerEl.textContent = "Time Left: " + secondsLeft + " seconds";
-    
-        if(secondsLeft === 0) {
-          clearInterval(timerInterval);
-          addScore();
-        }
-    
-      }, 1000);
-}
 
 //show questions
 function showQuestions() {
@@ -122,8 +109,13 @@ function showQuestions() {
     }
 }
 
-//When start button is clicked, start timer & presebnt questions
-startBtn.addEventListener("click", function() {
-    startTimer();
-    showQuestions();
-});
+//when start button is clicked, start the startQuiz function
+startBtn.addEventListener("click", startQuiz);
+
+//startQuiz funtion
+function startQuiz() {
+    startScreenEl.style.display = "none";
+
+    
+}
+
