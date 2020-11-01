@@ -1,19 +1,32 @@
 //variables
 var highScores = document.querySelector("#highScores");
+
 var timer = document.querySelector("#timer");
+
 var startScreen = document.querySelector("#startScreen");
+
 var startBtn = document.querySelector("#startQuiz");
+
 var quizBox = document.querySelector("#quizBox");
+
 var question = document.querySelector("#question");
-var choices = Array.from(document.querySelectorAll("#choices"));
+
+var choices = document.querySelector("#choices");
+
 var a = document.querySelector("#a");
+
 var b = document.querySelector("#b");
+
 var c = document.querySelector("#c");
+
 var d = document.querySelector("#d");
 
 var currentQuestion = {};
+
 var score = 0;
+
 var questionNumber = 0;
+
 var allQuestions = {};
 
 //array of questions
@@ -61,57 +74,4 @@ var myQuestions = [
         correctAnswer: 'c'
     }
 ]
-
-
-//points per correct answer
-var points = 200;
-var numberOfQuestions = 5;
-
-//start quiz funtion
-function startQuiz () {
-    questionNumber = 0;
-    score = 0;
-    allQuestions = [...myQuestions]
-    nextQuestion()
-
-}
-
-
-//function to check each answer and increase score if answer is correct
-function checkAnswer(answer) {
-    if(question[currentQuestionIndex].correct == answer){
-        score++
-        correctAnswer();
-    } else{
-        wrongAnswer();
-    }
-if(currentQuestionIndex < lastQuestionIndex){
-    questionNumber = 0;
-    currentQuestionIndex++;
-    questionRender();
-} else{
-    clearInterval(TIMER);
-    scoreRender();
-}
-}
-
-
-
-//start timer
-
-
-//show questions
-function showQuestions() {
-    var numberOfQuestions = myQuestions.length;
-
-    for (var i = 0; i < numberOfQuestions; i++) {
-        console.log(i);
-
-    }
-}
-
-//when start button is clicked, start the startQuiz function
-startBtn.addEventListener("click", startQuiz);
-
-
 
