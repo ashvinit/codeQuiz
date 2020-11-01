@@ -1,11 +1,16 @@
 //variables
-var highScoresEl = document.querySelector("#highScores");
-var timerEl = document.querySelector("#timer");
-var startScreenEl = document.querySelector("#startScreen");
+var highScores = document.querySelector("#highScores");
+var timer = document.querySelector("#timer");
+var startScreen = document.querySelector("#startScreen");
 var startBtn = document.querySelector("#startQuiz");
 var quizBox = document.querySelector("#quizBox");
 var question = document.querySelector("#question");
 var choices = document.querySelector("#choices");
+var a = document.querySelector("#a");
+var b = document.querySelector("#b");
+var c = document.querySelector("#c");
+var d = document.querySelector("#d");
+
 var questionNumber = 0;
 var timePerQuestion = 10;
 var score = 0;
