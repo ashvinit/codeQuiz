@@ -22,7 +22,7 @@ var c = document.querySelector("#c");
 var d = document.querySelector("#d");
 
 //the index of the last question
-var lastQuestion = questions.length -1;
+// var lastQuestion = myQuestions.length - 1;
 
 //current question
 var currentQuestion = 0;
@@ -75,7 +75,7 @@ var myQuestions = [
 
 //display questions on screen
 function renderQuestion () {
-    var q = questions[currentQuestion];
+    var q = myQuestions[currentQuestion];
     question.innerHTML = q.question;
     a.innerHTML = q.a;
     b.innerHTML = q.b;
@@ -108,9 +108,11 @@ function startQuiz () {
 var secondsLeft = 10;
 
 function setTimer() {
+    timer.style.display = "block";
+
   var timerInterval = setInterval(function() {
     secondsLeft--;
-    timeEl.textContent = "Timer: " + secondsLeft + "seconds";
+    timer.textContent = "Timer: " + secondsLeft + " seconds";
 
     if(secondsLeft === 0) {
       clearInterval(timerInterval);
