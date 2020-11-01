@@ -1,12 +1,15 @@
 //variables
 var highScoresEl = document.querySelector("#highScores");
 var timerEl = document.querySelector("#timer");
-var quizBoxEl = document.querySelector("#quizBox");
+var startScreenEl = document.querySelector("#startScreen");
 var startBtn = document.querySelector("#startQuiz");
-var showQuestions = document.querySelector("#showQuestions");
+var quizBox = document.querySelector("#quizBox");
 var question = document.querySelector("#question");
 var choices = document.querySelector("#choices");
 var questionNumber = 0;
+var score = 0;
+var lastQuestionIndex = myQuestions.length -1;
+var currentQuestionIndex = 0;
 
 
 var secondsLeft = 10;
@@ -64,7 +67,9 @@ var myQuestions = [
         ],
         correctAnswer: 2
     }
-]
+];
+
+
 
 //start timer
 function startTimer() {
@@ -83,17 +88,13 @@ function startTimer() {
 
 //show questions
 function showQuestions() {
+    var numberOfQuestions = myQuestions.length;
 
-    for (var i = 0; i < myQuestion.length; i++) {
-        console.log(myQuestions[i]);
+    for (var i = 0; i < numberOfQuestions; i++) {
+        console.log(i);
 
     }
 }
-
-
-
-
-
 
 //When start button is clicked, start timer & presebnt questions
 startBtn.addEventListener("click", function() {
