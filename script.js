@@ -27,6 +27,8 @@ var d = document.querySelector("#d");
 //current question
 var currentQuestion = 0;
 
+var score = 0;
+
 //array of questions
 var myQuestions = [
     {
@@ -100,6 +102,7 @@ function startQuiz () {
     //set timer
     setTimer();
 
+
 }
 
 
@@ -122,3 +125,11 @@ function setTimer() {
   }, 1000);
 }
 
+//check answer
+function checkAnswer(answer) {
+    if(answer == myQuestions[currentQuestion].correct) {
+        score++
+    } else {
+
+    }
+}
