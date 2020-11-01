@@ -1,4 +1,4 @@
-//variables
+//variables from html
 var highScores = document.querySelector("#highScores");
 
 var timer = document.querySelector("#timer");
@@ -21,13 +21,11 @@ var c = document.querySelector("#c");
 
 var d = document.querySelector("#d");
 
-var currentQuestion = {};
+//the index of the last question
+var lastQuestion = questions.length -1;
 
-var score = 0;
-
-var questionNumber = 0;
-
-var allQuestions = {};
+//current question
+var currentQuestion = 0;
 
 //array of questions
 var myQuestions = [
@@ -75,3 +73,12 @@ var myQuestions = [
     }
 ]
 
+//display questions on screen
+function renderQuestion () {
+    var q = questions[currentQuestion];
+    question.innerHTML = q.question;
+    a.innerHTML = q.a;
+    b.innerHTML = q.b;
+    c.innerHTML = q.c;
+    d.innerHTML = q.d;
+}
