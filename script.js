@@ -7,60 +7,52 @@ var quizBox = document.querySelector("#quizBox");
 var question = document.querySelector("#question");
 var choices = document.querySelector("#choices");
 var questionNumber = 0;
+var timePerQuestion = 10;
 var score = 0;
 
 //array of questions
 var myQuestions = [
     {
         question: "What is Kim's full name?",
-        options:[
-            'Kim Mary Kardashian West',
-            'Kimberly Noel Kardashian West',
-            'Kim Kardashian West',
-            'Kimberly Kardashian West'],
-        correctAnswer: 1
+        a: 'Kim Mary Kardashian West',
+        b: 'Kimberly Noel Kardashian West',
+        c: 'Kim Kardashian West',
+        d: 'Kimberly Kardashian West',
+        correctAnswer: 'b'
 
     },
     {
         question: "Who are Kim's biological parents?",
-        options:[
-            'Kris & Robert',
-            'Kaitlyn & Robert',
-            'Kaitlyn & Bruce',
-            'Kris & Bruce'
-        ],
-        correctAnswer: 0
+        a: 'Kris & Robert',
+        b: 'Kaitlyn & Robert',
+        c: 'Kaitlyn & Bruce',
+        d: 'Kris & Bruce',
+        correctAnswer: 'a'
 
     },
     {
         question: "How many children does Kim have?",
-        options:[
-            '3',
-            '5',
-            '3',
-            '4'
-        ],
-        correctAnswer: '3'
+        a: '3',
+        b: '5',
+        c: '3',
+        d: '4',
+        correctAnswer: 'd'
     },
     {
         question: "What are the names of kim's children?",
-        options:[
-            'North, Saint, Reign, Chicago',
-            'North, Saint, Chicago, Pslam',
-            'North, Reign, Chicago, Psalm',
-            'North, Saint, Chicago'
-        ],
-        correctAnswer: 1
+        a: 'North, Saint, Reign, Chicago',
+        b: 'North, Saint, Chicago, Pslam',
+        c: 'North, Reign, Chicago, Psalm',
+        d: 'North, Saint, Chicago',
+        correctAnswer: 'b'
     },
     {
         question: "What are the names of Kim's sisters?",
-        options:[
-            'Kourtney, Khloe, Kylie, Krissy',
-            'Kendall, Karen, Khloe, Kylie', 
-            'Kourtney, Khloe, Kendall, Kylie',
-            'Kris, Khloe, Kourtney, Kendall'
-        ],
-        correctAnswer: 2
+        a: 'Kourtney, Khloe, Kylie, Krissy',
+        b: 'Kendall, Karen, Khloe, Kylie', 
+        c: 'Kourtney, Khloe, Kendall, Kylie',
+        d: 'Kris, Khloe, Kourtney, Kendall',
+        correctAnswer: 'c'
     }
 ];
 
