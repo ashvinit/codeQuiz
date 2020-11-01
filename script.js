@@ -3,6 +3,10 @@ var highScoresEl = document.querySelector("#highScores");
 var timerEl = document.querySelector("#timer");
 var quizBoxEl = document.querySelector("#quizBox");
 var startBtn = document.querySelector("#startQuiz");
+var showQuestions = document.querySelector("#showQuestions");
+var question = document.querySelector("#question");
+var choices = document.querySelector("#choices");
+
 
 var secondsLeft = 10;
 
@@ -10,48 +14,46 @@ var secondsLeft = 10;
 var myQuestions = [
     {
         question: "What is Kim's full name?",
-        answers: {
-            a: 'Kim Mary Kardashian West',
-            b: 'Kimberly Noel Kardashian West',
-            c: 'Kim Kardashian West',
-            d: 'Kimberly Kardashian West'
-        }
+        a: 'Kim Mary Kardashian West',
+        b: 'Kimberly Noel Kardashian West',
+        c: 'Kim Kardashian West',
+        d: 'Kimberly Kardashian West',
+        correctAnswer: 'b'
+
     },
     {
         question: "Who are Kim's biological parents?",
-        answers: {
-            a: 'Kris & Robert',
-            b: 'Kaitlyn & Robert',
-            c: 'Kaitlyn & Bruce',
-            d: 'Kris & Bruce'
-        }
+        a: 'Kris & Robert',
+        b: 'Kaitlyn & Robert',
+        c: 'Kaitlyn & Bruce',
+        d: 'Kris & Bruce',
+        correctAnswer: 'a'
+
     },
     {
         question: "How many children does Kim have?",
-        answers: {
-            a: '3',
-            b: '5',
-            c: '3',
-            d: '4'
-        }
+        a: '3',
+        b: '5',
+        c: '3',
+        d: '4',
+        correctAnswer: 'd'
     },
     {
         question: "What are the names of kim's children?",
-        answers: {
-            a: 'North, Saint, Reign, Chicago',
-            b: 'North, Saint, Chicago, Pslam',
-            c: 'North, Reign, Chicago, Psalm',
-            d: 'North, Saint, Chicago'
-        }
+        a: 'North, Saint, Reign, Chicago',
+        b: 'North, Saint, Chicago, Pslam',
+        c: 'North, Reign, Chicago, Psalm',
+        d: 'North, Saint, Chicago',
+            correctAnswer: 'b'
     },
     {
         question: "What are the names of Kim's sisters?",
-        answers: {
-            a: 'Kourtney, Khloe, Kylie, Kendall',
-            b: 'Kendall, Kris, Khloe, Kylie', 
-            c: 'Kylie, Khloe, Kris, Kourtney',
-            d: 'Kris, Khloe, Kourtney, Kendall'
-        }
+        a: 'Kourtney, Khloe, Kylie, Kris',
+        b: 'Kendall, Kris, Khloe, Kylie', 
+        c: 'Kylie, Khloe, Kendall, Kourtney',
+        d: 'Kris, Khloe, Kourtney, Kendall',
+        correctAnswer: 'c'
+
     }
 ]
 
@@ -70,19 +72,7 @@ function startTimer() {
       }, 1000);
 }
 
-//show questions
-function showQuestions() {
-    quizBoxEl.style.display = "none";
 
-    var answer;
-
-    for (var i = 0; i < myQuestions.length; i++) {
-
-        
-
-    }
-
-}
 
 
 
