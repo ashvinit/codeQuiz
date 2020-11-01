@@ -83,12 +83,40 @@ function renderQuestion () {
     d.innerHTML = q.d;
 }
 
-//remove the startScreen display
-startScreen.style.display = "none";
+//start button
+startScreen.addEventListener("click", startQuiz);
 
-//function to display questions on screen
-renderQuestion();
+//function to start the quiz
+function startQuiz () {
+    //remove the startScreen display
+    startScreen.style.display = "none";
 
-//display quixBox
-quizBox.style.display = "block";
+    //function to display questions on screen
+    renderQuestion();
+
+    //display quixBox
+    quizBox.style.display = "block";
+
+    //set timer
+    setTimer();
+
+}
+
+
+
+//dispaly timer
+var secondsLeft = 10;
+
+function setTimer() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = "Timer: " + secondsLeft + "seconds";
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      sendMessage();
+    }
+
+  }, 1000);
+}
 
