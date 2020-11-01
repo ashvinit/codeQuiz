@@ -41,3 +41,14 @@ h2 {
 #highScores {
     margin-left: 0px;
 }
+
+#showQuestions {
+    padding-top: 10%;
+    color: black; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 50px; font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1;
+    text-align: center;
+    
+}

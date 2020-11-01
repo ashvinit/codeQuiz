@@ -6,6 +6,7 @@ var startBtn = document.querySelector("#startQuiz");
 var showQuestions = document.querySelector("#showQuestions");
 var question = document.querySelector("#question");
 var choices = document.querySelector("#choices");
+var questionNumber = 0;
 
 
 var secondsLeft = 10;
@@ -14,46 +15,54 @@ var secondsLeft = 10;
 var myQuestions = [
     {
         question: "What is Kim's full name?",
-        a: 'Kim Mary Kardashian West',
-        b: 'Kimberly Noel Kardashian West',
-        c: 'Kim Kardashian West',
-        d: 'Kimberly Kardashian West',
-        correctAnswer: 'b'
+        options:[
+            'Kim Mary Kardashian West',
+            'Kimberly Noel Kardashian West',
+            'Kim Kardashian West',
+            'Kimberly Kardashian West'],
+        correctAnswer: 1
 
     },
     {
         question: "Who are Kim's biological parents?",
-        a: 'Kris & Robert',
-        b: 'Kaitlyn & Robert',
-        c: 'Kaitlyn & Bruce',
-        d: 'Kris & Bruce',
-        correctAnswer: 'a'
+        options:[
+            'Kris & Robert',
+            'Kaitlyn & Robert',
+            'Kaitlyn & Bruce',
+            'Kris & Bruce'
+        ],
+        correctAnswer: 0
 
     },
     {
         question: "How many children does Kim have?",
-        a: '3',
-        b: '5',
-        c: '3',
-        d: '4',
-        correctAnswer: 'd'
+        options:[
+            '3',
+            '5',
+            '3',
+            '4'
+        ],
+        correctAnswer: '3'
     },
     {
         question: "What are the names of kim's children?",
-        a: 'North, Saint, Reign, Chicago',
-        b: 'North, Saint, Chicago, Pslam',
-        c: 'North, Reign, Chicago, Psalm',
-        d: 'North, Saint, Chicago',
-            correctAnswer: 'b'
+        options:[
+            'North, Saint, Reign, Chicago',
+            'North, Saint, Chicago, Pslam',
+            'North, Reign, Chicago, Psalm',
+            'North, Saint, Chicago'
+        ],
+        correctAnswer: 1
     },
     {
         question: "What are the names of Kim's sisters?",
-        a: 'Kourtney, Khloe, Kylie, Kris',
-        b: 'Kendall, Kris, Khloe, Kylie', 
-        c: 'Kylie, Khloe, Kendall, Kourtney',
-        d: 'Kris, Khloe, Kourtney, Kendall',
-        correctAnswer: 'c'
-
+        options:[
+            'Kourtney, Khloe, Kylie, Krissy',
+            'Kendall, Karen, Khloe, Kylie', 
+            'Kourtney, Khloe, Kendall, Kylie',
+            'Kris, Khloe, Kourtney, Kendall'
+        ],
+        correctAnswer: 2
     }
 ]
 
@@ -70,6 +79,15 @@ function startTimer() {
         }
     
       }, 1000);
+}
+
+//show questions
+function showQuestions() {
+
+    for (var i = 0; i < myQuestion.length; i++) {
+        console.log(myQuestions[i]);
+
+    }
 }
 
 
