@@ -11,9 +11,10 @@ var b = document.querySelector("#b");
 var c = document.querySelector("#c");
 var d = document.querySelector("#d");
 
-var currentQuestion = {}
+var currentQuestion = {};
 var score = 0;
 var questionNumber = 0;
+var allQuestions = {};
 
 //array of questions
 var myQuestions = [
@@ -59,16 +60,21 @@ var myQuestions = [
         d: 'Kris, Khloe, Kourtney, Kendall',
         correctAnswer: 'c'
     }
-];
-
-//display questions
-var lastQuestionIndex = myQuestions.length -1;
-var currentQuestionIndex = 0;
+]
 
 
 //points per correct answer
 var points = 200;
 var numberOfQuestions = 5;
+
+//start quiz funtion
+function startQuiz () {
+    questionNumber = 0;
+    score = 0;
+    allQuestions = [...myQuestions]
+    nextQuestion()
+
+}
 
 
 //function to check each answer and increase score if answer is correct
