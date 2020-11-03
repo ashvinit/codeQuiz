@@ -106,7 +106,7 @@ function startQuiz () {
 }
 
 //dispaly timer
-var secondsLeft = 10;
+var secondsLeft = 5;
 var timerInterval = 0;
 
 function setTimer() {
@@ -119,6 +119,7 @@ function setTimer() {
         clearInterval(timerInterval);
         currentQuestion++;
         renderQuestion();
+        secondsLeft = 5;
     }
 }, 1000);
 }
@@ -129,42 +130,37 @@ var lastQuestion = myQuestions.length - 1;
 function checkAnswer(answer) {
     if(answer == myQuestions[currentQuestion].correctAnswer) {
         score++
-        // answerIsCorrect();
+        //answerIsCorrect();
         currentQuestion++;
         renderQuestion();
-        //setTimer();
-        secondsLeft = 10;
+        secondsLeft = 5;
         
         
 
     } else {
-        // answerIsIncorrect();
+        //answerIsIncorrect();
         currentQuestion++;
         renderQuestion();
-        //setTimer();
-        secondsLeft = 10;
+        secondsLeft = 5;
         
     }
 
-    console.log(answer);
-
-    // if (currentQuestion < lastQuestion) {
-    //     timer = 0;
-    //     currentQuestion++;
-    //     renderQuestion();
-    //     setTimer();
-
-    //}
-
+    if (currentQuestion = myQuestions.length - 1) {
+        timerEl.style.display = "none";
+        scoreScreen();
+    }
 
 }
 
 // function answerIsCorrect () {
-//     document.getElementById(choi.style.backgroundColor = "#FFFFFF";
+//     document.getElementById(answer).style.backgroundColor = "#FFFFFF";
 // }
 
 // function answerIsIncorrect () {
-//     document.getElementById(checkAnswer(answer)).style.backgroundColor = "#FF0000";
+//     document.getElementById(answer).style.backgroundColor = "#FF0000";
 // }
 
- 
+
+function scoreScreen () {
+    quizBoxEl.style.display = "none";
+}
