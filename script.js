@@ -1,25 +1,25 @@
 //variables from html
-var highScores = document.querySelector("#highScores");
+var highScoresEl = document.querySelector("#highScores");
 
-var timer = document.querySelector("#timer");
+var timerEl = document.querySelector("#timer");
 
-var startScreen = document.querySelector("#startScreen");
+var startScreenEl = document.querySelector("#startScreen");
 
-var startBtn = document.querySelector("#startQuiz");
+var startBtnEl = document.querySelector("#startQuiz");
 
-var quizBox = document.querySelector("#quizBox");
+var quizBoxEl = document.querySelector("#quizBox");
 
-var question = document.querySelector("#question");
+var questionEl = document.querySelector("#question");
 
-var choices = document.querySelector("#choices");
+var choicesEl = document.querySelector("#choices");
 
-var a = document.querySelector("#a");
+var choiceAEl = document.querySelector("#a");
 
-var b = document.querySelector("#b");
+var choiceBEl = document.querySelector("#b");
 
-var c = document.querySelector("#c");
+var choiceCEl = document.querySelector("#c");
 
-var d = document.querySelector("#d");
+var choiceDEl = document.querySelector("#d");
 
 
 //current question
@@ -76,50 +76,51 @@ var myQuestions = [
 //display questions on screen
 function renderQuestion () {
     var q = myQuestions[currentQuestion];
-    question.innerHTML = q.question;
-    a.innerHTML = q.a;
-    b.innerHTML = q.b;
-    c.innerHTML = q.c;
-    d.innerHTML = q.d;
+    questionEl.innerHTML = q.question;
+    choiceAEl.innerHTML = q.a;
+    choiceBEl.innerHTML = q.b;
+    choiceCEl.innerHTML = q.c;
+    choiceDEl.innerHTML = q.d;
 
 }
 
 //start button
-startScreen.addEventListener("click", startQuiz);
+startScreenEl.addEventListener("click", startQuiz);
 
 //function to start the quiz
 function startQuiz () {
     //remove the startScreen display
-    startScreen.style.display = "none";
+    startScreenEl.style.display = "none";
 
     //function to display questions on screen
     renderQuestion();
 
     //display quixBox
-    quizBox.style.display = "block";
+    quizBoxEl.style.display = "block";
 
     //set timer
     setTimer();
+
+    timerEl.style.display = "block";
 
 }
 
 //dispaly timer
 var secondsLeft = 10;
+var timerInterval = 0;
 
 function setTimer() {
-    timer.style.display = "block";
 
-  var timerInterval = setInterval(function() {
+    timerInterval = setInterval(function() {
     secondsLeft--;
-    timer.textContent = "Timer: " + secondsLeft + " seconds";
-
+    timerEl.textContent = "Timer: " + secondsLeft + " seconds";
+    
     if(secondsLeft === 0) {
-      clearInterval(timerInterval);
-      currentQuestion++;
-      renderQuestion();
+        clearInterval(timerInterval);
+        currentQuestion++;
+        renderQuestion();
     }
-
-  }, 1000);
+}, 1000);
 }
 
 var lastQuestion = myQuestions.length - 1;
@@ -131,7 +132,8 @@ function checkAnswer(answer) {
         // answerIsCorrect();
         currentQuestion++;
         renderQuestion();
-        setTimer();
+        //setTimer();
+        secondsLeft = 10;
         
         
 
@@ -139,17 +141,20 @@ function checkAnswer(answer) {
         // answerIsIncorrect();
         currentQuestion++;
         renderQuestion();
-        setTimer();
+        //setTimer();
+        secondsLeft = 10;
         
     }
 
-    if (currentQuestion < lastQuestion) {
-        timer = 0;
-        currentQuestion++;
-        renderQuestion();
-        setTimer();
+    console.log(answer);
 
-    }
+    // if (currentQuestion < lastQuestion) {
+    //     timer = 0;
+    //     currentQuestion++;
+    //     renderQuestion();
+    //     setTimer();
+
+    //}
 
 
 }
