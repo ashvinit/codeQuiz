@@ -129,6 +129,7 @@ var lastQuestion = myQuestions.length - 1;
 //check answer
 function checkAnswer(answer) {
     if(answer == myQuestions[currentQuestion].correctAnswer) {
+        //alert("correct");
         score++
         //answerIsCorrect();
         currentQuestion++;
@@ -139,13 +140,14 @@ function checkAnswer(answer) {
 
     } else {
         //answerIsIncorrect();
+        //alert("incorrect");
         currentQuestion++;
         renderQuestion();
         secondsLeft = 5;
         
     }
 
-    if (currentQuestion = myQuestions.length - 1) {
+    if (currentQuestion == lastQuestion) {
         timerEl.style.display = "none";
         scoreScreen();
     }
