@@ -78,18 +78,27 @@ var myQuestions = [
 
 //display questions on screen
 function renderQuestion () {
+    
     if (currentQuestion === myQuestions.length) {
+        
         timerEl.style.display = "none";
+        
         quizBoxEl.style.display = "none";
+        
         highScoreScreenEl.style.display = "block";
-    } 
-    else {
-    var q = myQuestions[currentQuestion];
-    questionEl.innerHTML = q.question;
-    choiceAEl.innerHTML = q.a;
-    choiceBEl.innerHTML = q.b;
-    choiceCEl.innerHTML = q.c;
-    choiceDEl.innerHTML = q.d;
+    } else {
+        
+        var q = myQuestions[currentQuestion];
+        
+        questionEl.innerHTML = q.question;
+        
+        choiceAEl.innerHTML = q.a;
+        
+        choiceBEl.innerHTML = q.b;
+        
+        choiceCEl.innerHTML = q.c;
+        
+        choiceDEl.innerHTML = q.d;
     }
 }
 
@@ -98,6 +107,7 @@ startScreenEl.addEventListener("click", startQuiz);
 
 //function to start the quiz and display questions and timer
 function startQuiz () {
+    
     //remove the startScreen display
     startScreenEl.style.display = "none";
 
@@ -122,29 +132,31 @@ var timerInterval = 0;
 
 //function for the timer
 function setTimer() {
+    
     timerInterval = setInterval(function() {
-    secondsLeft--;
-    timerEl.textContent = "Timer: " + secondsLeft + " seconds";
-    //if timer goes to 0, move onto the next question and initialize timer to 5
-    if(secondsLeft === 0) {
-        //clearInterval(timerInterval);
-        currentQuestion++;
-        secondsLeft = 5;
-        renderQuestion();
+    
+        secondsLeft--;
         
-    }
-}, 1000);
+        timerEl.textContent = "Timer: " + secondsLeft + " seconds";
+    
+        //if timer goes to 0, move onto the next question and initialize timer to 5
+        if(secondsLeft === 0) {
+        
+            //clearInterval(timerInterval);
+            currentQuestion++;
+        
+            secondsLeft = 5;
+        
+            renderQuestion();
+        }
+    }, 1000);
 }
-
-//variable for the last question
-var lastQuestion = myQuestions.length;
 
 //check answer funtion
 function checkAnswer(answer) {
     
     //if the button the user clicked is the same as the correctAnswer property in the array
     if(answer == myQuestions[currentQuestion].correctAnswer) {
-        //alert("correct");
         
         //add 1 to counter
         counter++;
@@ -153,50 +165,44 @@ function checkAnswer(answer) {
         score+= 200;
 
         console.log(score);
+        
         console.log(counter);
+        
         //answerIsCorrect();
 
         //go to the next question and initialize timer
         currentQuestion++;
+        
         renderQuestion();
+        
         secondsLeft = 5;
+    
+    } else { //if answer is wrong
         
-        
-    //if answer is wrong
-    } else {
         //answerIsIncorrect();
-        //alert("incorrect");
 
         //add 1 to counter
         counter++;
+        
         console.log(counter);
 
         //go to the next question and initialize timer
         currentQuestion++;
-        renderQuestion();
-        secondsLeft = 5;
         
+        renderQuestion();
+        
+        secondsLeft = 5;
     }
-
 }
 
-
-    //if the number of answered questions is equal to the last question then remove timer, current display, and add new screen and start addInitials function
-
-
-
-
-
-
-
-
 // function answerIsCorrect () {
+
 //     document.getElementById(answer).style.backgroundColor = "#FFFFFF";
+
 // }
 
 // function answerIsIncorrect () {
+
 //     document.getElementById(answer).style.backgroundColor = "#FF0000";
+
 // }
-
-
-//highScoreScreenEl.addEventListener
