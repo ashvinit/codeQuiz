@@ -1,4 +1,4 @@
-//variables from html
+//variables
 var highScoresEl = document.querySelector("#highScores");
 
 var timerEl = document.querySelector("#timer");
@@ -23,12 +23,13 @@ var choiceDEl = document.querySelector("#d");
 
 var highScoreScreenEl = document.querySelector("#highScoreScreen");
 
-
-//current question
+//variable for the current question that will display to the user
 var currentQuestion = 0;
 
+//variable to keep track of score, initialized
 var score = 0;
 
+//counter variable to count the number of answers that were inputted
 var counter = 0;
 
 //array of questions
@@ -40,7 +41,6 @@ var myQuestions = [
         c: 'Kim Kardashian West',
         d: 'Kimberly Kardashian West',
         correctAnswer: 'b'
-
     },
     {
         question: "Who are Kim's biological parents?",
@@ -49,7 +49,6 @@ var myQuestions = [
         c: 'Kaitlyn & Bruce',
         d: 'Kris & Bruce',
         correctAnswer: 'a'
-
     },
     {
         question: "How many children does Kim have?",
@@ -85,13 +84,12 @@ function renderQuestion () {
     choiceBEl.innerHTML = q.b;
     choiceCEl.innerHTML = q.c;
     choiceDEl.innerHTML = q.d;
-
 }
 
-//start button
+//when the start button is clicked, startQuiz function will begin
 startScreenEl.addEventListener("click", startQuiz);
 
-//function to start the quiz
+//function to start the quiz and display questions and timer
 function startQuiz () {
     //remove the startScreen display
     startScreenEl.style.display = "none";
@@ -105,20 +103,22 @@ function startQuiz () {
     //set timer
     setTimer();
 
+    //show timer
     timerEl.style.display = "block";
-
 }
 
-//dispaly timer
+//variable to initialize the timer
 var secondsLeft = 5;
+
+//variable to initialize timerInterval
 var timerInterval = 0;
 
+//function for the timer
 function setTimer() {
-
     timerInterval = setInterval(function() {
     secondsLeft--;
     timerEl.textContent = "Timer: " + secondsLeft + " seconds";
-    
+    //if timer goes to 0, move onto the next question and initialize timer to 5
     if(secondsLeft === 0) {
         clearInterval(timerInterval);
         currentQuestion++;
@@ -128,34 +128,49 @@ function setTimer() {
 }, 1000);
 }
 
+//variable for the last question
 var lastQuestion = myQuestions.length;
 
-//check answer
+//check answer funtion
 function checkAnswer(answer) {
+    
+    //if the button the user clicked is the same as the correctAnswer property in the array
     if(answer == myQuestions[currentQuestion].correctAnswer) {
         //alert("correct");
+        
+        //add 1 to counter
         counter++;
+        
+        //add score by 200
         score+= 200;
+
         console.log(score);
         console.log(counter);
         //answerIsCorrect();
+
+        //go to the next question and initialize timer
         currentQuestion++;
         renderQuestion();
         secondsLeft = 5;
         
         
-
+    //if answer is wrong
     } else {
         //answerIsIncorrect();
         //alert("incorrect");
+
+        //add 1 to counter
         counter++;
         console.log(counter);
+
+        //go to the next question and initialize timer
         currentQuestion++;
         renderQuestion();
         secondsLeft = 5;
         
     }
 
+    //if the number of answered questions is equal to the last question then remove timer, current display, and add new screen and start addInitials function
     if (counter == lastQuestion) {
         timerEl.style.display = "none";
         quizBoxEl.style.display = "none";
