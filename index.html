@@ -10,14 +10,15 @@
 
     <!-- top bar -->
     <div id="topBar">
-    <!-- View Highscores -->
+
+        <!-- View Highscores -->
         <div id="highScores" style="position: relative; float: left; top: 0px; font-family: 'Helvetica Neue', sans-serif";>
 
             <a href="#highScoreScreen" style="text-decoration: none;">View Highscores</a>
 
         </div>
 
-    <!-- Timer -->
+        <!-- Timer -->
         <div id="timer" style="position: relative; float: right; top: 0px; display: none; font-family: 'Helvetica Neue', sans-serif; font-weight: bold;"></div>
 
     </div>
@@ -32,22 +33,34 @@
         
         <!-- Start Game Button -->
         <div style="text-align:center;">
+            
             <button id="startQuiz">Start.</button>
+        
         </div>
+    
     </div>
 
     <!-- Quiz Box -->
 
     <div id="quizBox" style="display: none;">
+        
         <div id="question"></div>
+        
         <div id="choices">
-                <button id="a" onclick="checkAnswer('a')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold;"></button><br>
-                <button id="b" onclick="checkAnswer('b')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold;"></button><br>
-                <button id="c" onclick="checkAnswer('c')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold;"></button><br>
-                <button id="d" onclick="checkAnswer('d')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold;"></button><br>
+                
+            <button id="a" onclick="checkAnswer('a')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold;"></button><br>
+            
+            <button id="b" onclick="checkAnswer('b')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold;"></button><br>
+            
+            <button id="c" onclick="checkAnswer('c')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold;"></button><br>
+            
+            <button id="d" onclick="checkAnswer('d')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold;"></button><br>
+        
         </div>
     
     </div>
+
+    <!-- Add Initials Screen -->
     
     <div id="addInitials" style="display: none;">
 
@@ -59,13 +72,10 @@
         
     </div>
 
-    <div id="highScoreScreen">
+    <!-- High Score Screen -->
 
-    </div>
+    <div id="highScoreScreen"></div>
 
-
-
-    
     <script src="script.js"></script>
 </body>
 </html>
