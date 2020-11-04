@@ -21,6 +21,8 @@ var choiceCEl = document.querySelector("#c");
 
 var choiceDEl = document.querySelector("#d");
 
+var addInitialsEl = document.querySelector("#addInitials");
+
 var highScoreScreenEl = document.querySelector("#highScoreScreen");
 
 //variable for the current question that will display to the user
@@ -85,7 +87,8 @@ function renderQuestion () {
         
         quizBoxEl.style.display = "none";
         
-        highScoreScreenEl.style.display = "block";
+        addInitialsEl.style.display = "block";
+
     } else {
         
         var q = myQuestions[currentQuestion];
@@ -206,3 +209,15 @@ function checkAnswer(answer) {
 //     document.getElementById(answer).style.backgroundColor = "#FF0000";
 
 // }
+
+//add event listener for submit button to add initials and score
+addInitialsEl.addEventListener("click", addScores);
+
+function addScores () {
+
+    addInitialsEl.style.display = "none";
+
+    highScoreScreenEl.style.display = "block";
+    
+
+}
