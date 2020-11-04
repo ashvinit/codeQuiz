@@ -120,12 +120,20 @@ function setTimer() {
     timerEl.textContent = "Timer: " + secondsLeft + " seconds";
     //if timer goes to 0, move onto the next question and initialize timer to 5
     if(secondsLeft === 0) {
-        clearInterval(timerInterval);
+        //clearInterval(timerInterval);
         currentQuestion++;
-        renderQuestion();
         secondsLeft = 5;
+        renderQuestion();
+        
     }
 }, 1000);
+}
+
+//function to addInitials
+function addInitials() {
+    timerEl.style.display = "none";
+    quizBoxEl.style.display = "none";
+    highScoreScreenEl.style.display = "block";
 }
 
 //variable for the last question
@@ -172,9 +180,6 @@ function checkAnswer(answer) {
 
     //if the number of answered questions is equal to the last question then remove timer, current display, and add new screen and start addInitials function
     if (counter == lastQuestion) {
-        timerEl.style.display = "none";
-        quizBoxEl.style.display = "none";
-        highScoreScreenEl.style.display = "block";
         addInitials();
     }
 
