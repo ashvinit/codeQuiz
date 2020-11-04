@@ -13,7 +13,7 @@
     <!-- View Highscores -->
         <div id="highScores" style="position: relative; float: left; top: 0px; font-family: 'Helvetica Neue', sans-serif";>
 
-            <a href="#" style="text-decoration: none;">View Highscores</a>
+            <a href="#highScoreScreen" style="text-decoration: none;">View Highscores</a>
 
         </div>
 
@@ -47,6 +47,16 @@
                 <button id="d" onclick="checkAnswer('d')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold;"></button><br>
         </div>
     
+    </div>
+    
+    <div id="highScoreScreen" style="display: none;">
+
+        <div id="initials">Enter Initials:</div>
+
+            <input id="enterInitials" type="text">
+
+            <button id="submit" onclick="">Submit</button>
+        
     </div>
     
     <script src="script.js"></script>

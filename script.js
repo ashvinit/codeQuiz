@@ -21,11 +21,15 @@ var choiceCEl = document.querySelector("#c");
 
 var choiceDEl = document.querySelector("#d");
 
+var highScoreScreenEl = document.querySelector("#highScoreScreen");
+
 
 //current question
 var currentQuestion = 0;
 
 var score = 0;
+
+var counter = 0;
 
 //array of questions
 var myQuestions = [
@@ -124,13 +128,16 @@ function setTimer() {
 }, 1000);
 }
 
-var lastQuestion = myQuestions.length - 1;
+var lastQuestion = myQuestions.length;
 
 //check answer
 function checkAnswer(answer) {
     if(answer == myQuestions[currentQuestion].correctAnswer) {
         //alert("correct");
-        score++
+        counter++;
+        score+= 200;
+        console.log(score);
+        console.log(counter);
         //answerIsCorrect();
         currentQuestion++;
         renderQuestion();
@@ -141,15 +148,19 @@ function checkAnswer(answer) {
     } else {
         //answerIsIncorrect();
         //alert("incorrect");
+        counter++;
+        console.log(counter);
         currentQuestion++;
         renderQuestion();
         secondsLeft = 5;
         
     }
 
-    if (currentQuestion == lastQuestion) {
+    if (counter == lastQuestion) {
         timerEl.style.display = "none";
-        scoreScreen();
+        quizBoxEl.style.display = "none";
+        highScoreScreenEl.style.display = "block";
+        addInitials();
     }
 
 }
@@ -163,6 +174,4 @@ function checkAnswer(answer) {
 // }
 
 
-function scoreScreen () {
-    quizBoxEl.style.display = "none";
-}
+highScoreScreenEl.addEventListener
