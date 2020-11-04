@@ -78,12 +78,19 @@ var myQuestions = [
 
 //display questions on screen
 function renderQuestion () {
+    if (currentQuestion === myQuestions.length) {
+        timerEl.style.display = "none";
+        quizBoxEl.style.display = "none";
+        highScoreScreenEl.style.display = "block";
+    } 
+    else {
     var q = myQuestions[currentQuestion];
     questionEl.innerHTML = q.question;
     choiceAEl.innerHTML = q.a;
     choiceBEl.innerHTML = q.b;
     choiceCEl.innerHTML = q.c;
     choiceDEl.innerHTML = q.d;
+    }
 }
 
 //when the start button is clicked, startQuiz function will begin
@@ -171,21 +178,17 @@ function checkAnswer(answer) {
         
     }
 
+}
+
+
     //if the number of answered questions is equal to the last question then remove timer, current display, and add new screen and start addInitials function
-}
 
-if (lastQuestion == counter) {
-    timerEl.style.display = "none";
-    quizBoxEl.style.display = "none";
-    highScoreScreenEl.style.display = "block";
-}
 
-//function to addInitials
-// function addInitials() {
-//     timerEl.style.display = "none";
-//     quizBoxEl.style.display = "none";
-//     highScoreScreenEl.style.display = "block";
-// }
+
+
+
+
+
 
 // function answerIsCorrect () {
 //     document.getElementById(answer).style.backgroundColor = "#FFFFFF";
@@ -196,4 +199,4 @@ if (lastQuestion == counter) {
 // }
 
 
-highScoreScreenEl.addEventListener
+//highScoreScreenEl.addEventListener
