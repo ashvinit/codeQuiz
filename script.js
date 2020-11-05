@@ -21,10 +21,6 @@ var choiceCEl = document.querySelector("#c");
 
 var choiceDEl = document.querySelector("#d");
 
-var addInitialsEl = document.querySelector("#addInitials");
-
-var highScoreScreenEl = document.querySelector("#highScoreScreen");
-
 //variable for the current question that will display to the user
 var currentQuestion = 0;
 
@@ -211,13 +207,18 @@ function checkAnswer(answer) {
 // }
 
 //add event listener for submit button to add initials and score
-addInitialsEl.addEventListener("click", addScores);
 
-function addScores () {
+//variables for Highscores
+var addInitialsEl = document.querySelector("#addInitials");
 
-    addInitialsEl.style.display = "none";
+var highScoreScreenEl = document.querySelector("#highScoreScreen");
 
-    highScoreScreenEl.style.display = "block";
-    
+var submitBtnEl = document.querySelector("#submit");
 
-}
+var mostRecentScore = localStorage.getItem("mostRecentScore");
+
+
+
+
+
+
