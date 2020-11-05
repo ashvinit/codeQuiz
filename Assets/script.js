@@ -141,7 +141,7 @@ function setTimer() {
     
         secondsLeft--;
         
-        timerEl.textContent = "Timer: " + secondsLeft + " seconds";
+        timerEl.textContent = secondsLeft;
     
         //if timer goes to 0, move onto the next question and initialize timer to 5
         if(secondsLeft === 0) {
@@ -162,6 +162,8 @@ function checkAnswer(answer) {
     //if the button the user clicked is the same as the correctAnswer property in the array
     if(answer == myQuestions[currentQuestion].correctAnswer) {
         
+        // answerIsCorrect();
+       
         //add 1 to counter
         counter++;
         
@@ -171,9 +173,7 @@ function checkAnswer(answer) {
         console.log(score);
         
         console.log(counter);
-        
-        //answerIsCorrect();
-
+            
         //go to the next question and initialize timer
         currentQuestion++;
         
@@ -183,7 +183,7 @@ function checkAnswer(answer) {
     
     } else { //if answer is wrong
         
-        //answerIsIncorrect();
+        // answerIsIncorrect();
 
         //add 1 to counter
         counter++;
@@ -201,13 +201,13 @@ function checkAnswer(answer) {
 
 // function answerIsCorrect () {
 
-//     document.getElementById(answer).style.backgroundColor = "#FFFFFF";
+//     document.getElementById(checkAnswer(answer)).style.backgroundColor = "#FFFFFF";
 
 // }
 
 // function answerIsIncorrect () {
 
-//     document.getElementById(answer).style.backgroundColor = "#FF0000";
+//     document.getElementById(checkAnswer(answer)).style.backgroundColor = "#FF0000";
 
 // }
 
