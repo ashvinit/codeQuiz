@@ -21,6 +21,7 @@ var choiceCEl = document.querySelector("#c");
 
 var choiceDEl = document.querySelector("#d");
 
+
 //variable for the current question that will display to the user
 var currentQuestion = 0;
 
@@ -78,6 +79,10 @@ var myQuestions = [
 function renderQuestion () {
     
     if (currentQuestion === myQuestions.length) {
+
+        clearInterval(timerInterval);
+
+        localStorage.setItem("mostRecentScore", score);
         
         timerEl.style.display = "none";
         
@@ -208,15 +213,19 @@ function checkAnswer(answer) {
 
 //add event listener for submit button to add initials and score
 
-//variables for Highscores
-var addInitialsEl = document.querySelector("#addInitials");
 
-var highScoreScreenEl = document.querySelector("#highScoreScreen");
 
-var submitBtnEl = document.querySelector("#submit");
+finalScore.innerText = mostRecentScore;
 
-var mostRecentScore = localStorage.getItem("mostRecentScore");
+function addScore() {
 
+    localStorage.setItem("highScores", []);
+
+    score.innerText = mostRecentScore;
+
+    console.log(mostRecentScore);
+
+}
 
 
 
