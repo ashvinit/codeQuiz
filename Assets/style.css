@@ -97,3 +97,11 @@ margin-right: auto;
     text-align: center;
     padding-top: 20%;
 }
+
+@media screen and (max-width: 768px) {
+    #choices {
+        min-width: 40rem;
+    }
+
+    
+}
