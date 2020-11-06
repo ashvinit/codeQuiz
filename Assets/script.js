@@ -23,9 +23,21 @@ var choiceDEl = document.querySelector("#d");
 
 var addInitialsEl = document.querySelector("#addInitials");
 
-var initialsEl = document.querySelector("#initials").value;
+var initialsEl = document.querySelector("#enterInitials");
 
-var highScoreScreenEl = document.querySelector("#highScoreScreen")
+var highScoreScreenEl = document.querySelector("#highScoreScreen");
+
+var userScoreEl = document.querySelector("#userScore");
+
+var yourScoreEl = document.querySelector("#yourScore");
+
+var h1El = document.createElement("h1");
+
+var h1El2 = document.createElement("h1");
+
+trueFansEl = document.querySelector("#trueFans");
+
+
 
 
 
@@ -60,7 +72,7 @@ var myQuestions = [
         question: "How many children does Kim have?",
         a: '3',
         b: '5',
-        c: '3',
+        c: '2',
         d: '4',
         correctAnswer: 'd'
     },
@@ -80,7 +92,11 @@ var myQuestions = [
         d: 'Kris, Khloe, Kourtney, Kendall',
         correctAnswer: 'c'
     }
-]
+];
+
+
+//array for highscores
+var highScores = JSON.parse(localStorage.getItem("highScores")) || []; 
 
 //display questions on screen
 function renderQuestion () {
@@ -90,12 +106,18 @@ function renderQuestion () {
         clearInterval(timerInterval);
 
         localStorage.setItem("mostRecentScore", score);
+
+        currentQuestion = 0;
         
         timerEl.style.display = "none";
         
         quizBoxEl.style.display = "none";
         
         addInitialsEl.style.display = "block";
+        
+        h1El.innerHTML = "Your Score: " + score;
+
+        yourScoreEl.append(h1El);
 
     } else {
         
@@ -133,6 +155,14 @@ function startQuiz () {
 
     //show timer
     timerEl.style.display = "block";
+
+    highScoreScreenEl.style.display = "none";
+
+    addInitialsEl.style.display = "none";
+
+    h1El2.innerHTML = " ";
+
+
 }
 
 //variable to initialize the timer
@@ -145,7 +175,7 @@ var timerInterval = 0;
 function setTimer() {
     
     timerInterval = setInterval(function() {
-    
+
         secondsLeft--;
         
         timerEl.textContent = secondsLeft;
@@ -221,20 +251,46 @@ function checkAnswer(answer) {
 //add event listener for submit button to add initials and score
 
 
-function saveinitials() {
 
-    localStorage.setItem("intialsEl", input);
+function saveInitials() {
+
+    var mostRecentScore = {
+
+        initials: initialsEl.value, 
+        score: score
+    }
+
+    highScores.push(mostRecentScore);
+
+    console.log(highScores);
+
+    console.log(mostRecentScore);
+    
+    localStorage.setItem("highScores", JSON.stringify(highScores));
 
     console.log(localStorage);
 
     addInitialsEl.style.display = "none";
 
+    h1El.innerHTML = " ";
+
+    for (i = 0; i < highScores.length; i++) {
+
+        var pEl = document.createElement("p");
+
+        pEl.textContent = highScores[i].initials + " - " + highScores[i].score;
+
+        userScoreEl.append(pEl);
+    }
+
     highScoreScreenEl.style.display = "block";
 
+    h1El2.innerHTML = "True Fans: ";
 
-
+    trueFans.append(h1El2);
 
 }
+
 
 
 

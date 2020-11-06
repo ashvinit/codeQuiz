@@ -64,11 +64,13 @@
     
     <div id="addInitials" style="display: none;">
 
-        <div id="initials">Enter Initials:</div>
+        <div id="yourScore"></div>
 
-            <input id="enterInitials" type="text" placeholder="Enter Initials">
+            <div id="initials">Enter Initials:</div>
 
-            <button id="submit" onclick="saveInitials()">Submit</button>
+                <input id="enterInitials" type="text" placeholder="Enter Initials">
+
+                <button id="submit" onclick="saveInitials()">Submit</button>
         
     </div>
 
@@ -76,7 +78,11 @@
 
     <div id="highScoreScreen">
 
+        <div id="trueFans"></div>
+        
         <ul id="userScore"></ul>
+
+        <button id="goBack" onclick="startQuiz()">Go Back</button>
 
     </div>
 
