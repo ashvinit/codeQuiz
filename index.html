@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kim Kardashian Quiz</title>
-    <link rel="stylesheet" href="Assets/style.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
 </head>
 <body>
 
@@ -12,7 +12,7 @@
     <div id="topBar">
 
         <!-- View Highscores -->
-        <div id="highScores" style="position: relative; float: left; top: 0px; font-family: 'Helvetica Neue', sans-serif";>
+        <div id="highScores" onclick="newScreen()" style="position: relative; float: left; top: 0px; font-family: 'Helvetica Neue', sans-serif";>
 
             <a href="#highScoreScreen" style="text-decoration: none;">View Highscores</a>
 
@@ -48,13 +48,13 @@
         
         <div id="choices">
                 
-            <button id="a" onclick="checkAnswer('a')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; width: 25%;"></button><br>
+            <button id="a" onclick="checkAnswer('a')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; width: 25%; background-color: transparent;"></button><br>
             
-            <button id="b" onclick="checkAnswer('b')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; width: 25%;"></button><br>
+            <button id="b" onclick="checkAnswer('b')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; width: 25%; background-color: transparent;"></button><br>
             
-            <button id="c" onclick="checkAnswer('c')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; width: 25%;"></button><br>
+            <button id="c" onclick="checkAnswer('c')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; width: 25%; background-color: transparent;"></button><br>
             
-            <button id="d" onclick="checkAnswer('d')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; width: 25%;"></button><br>
+            <button id="d" onclick="checkAnswer('d')" style="font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; width: 25%; background-color: transparent;"></button><br>
         
         </div>
     
@@ -82,10 +82,8 @@
         
         <ul id="userScore"></ul>
 
-        <button id="goBack" onclick="startQuiz()">Go Back</button>
-
     </div>
 
-    <script src="Assets/script.js"></script>
+    <script src="Assets/js/script.js"></script>
 </body>
 </html>

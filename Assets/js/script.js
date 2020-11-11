@@ -38,9 +38,6 @@ var h1El2 = document.createElement("h1");
 trueFansEl = document.querySelector("#trueFans");
 
 
-
-
-
 //variable for the current question that will display to the user
 var currentQuestion = 0;
 
@@ -248,10 +245,8 @@ function checkAnswer(answer) {
 
 // }
 
-//add event listener for submit button to add initials and score
 
-
-
+//on click function to save initials and view highscores
 function saveInitials() {
 
     var mostRecentScore = {
@@ -290,6 +285,37 @@ function saveInitials() {
     trueFans.append(h1El2);
 
 }
+
+function newScreen() {
+
+    startScreenEl.style.display = "none";
+
+    highScoreScreenEl.style.display = "block";
+
+    h1El2.innerHTML = "True Fans: ";
+
+    trueFans.append(h1El2);
+
+
+    for (i = 0; i < localStorage.length; i++) {
+
+        localStorage.getItem(highScores[i]);
+
+        var pEl = document.createElement("p");
+
+        pEl.textContent = highScores[i].initials + " - " + highScores[i].score;
+
+        userScoreEl.append(pEl);
+    }
+
+    
+
+
+
+
+}
+
+
 
 
 
