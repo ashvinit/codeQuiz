@@ -35,6 +35,8 @@ var h1El = document.createElement("h1");
 
 var h1El2 = document.createElement("h1");
 
+var goBackBtnEl = document.querySelector("#goBack");
+
 trueFansEl = document.querySelector("#trueFans");
 
 
@@ -195,8 +197,6 @@ function checkAnswer(answer) {
     
     //if the button the user clicked is the same as the correctAnswer property in the array
     if(answer == myQuestions[currentQuestion].correctAnswer) {
-        
-        // answerIsCorrect();
        
         //add 1 to counter
         counter++;
@@ -216,8 +216,6 @@ function checkAnswer(answer) {
         secondsLeft = 5;
     
     } else { //if answer is wrong
-        
-        // answerIsIncorrect();
 
         //add 1 to counter
         counter++;
@@ -231,20 +229,8 @@ function checkAnswer(answer) {
         
         secondsLeft = 5;
     }
+
 }
-
-// function answerIsCorrect () {
-
-//     document.getElementById(checkAnswer(answer)).style.backgroundColor = "#FFFFFF";
-
-// }
-
-// function answerIsIncorrect () {
-
-//     document.getElementById(checkAnswer(answer)).style.backgroundColor = "#FF0000";
-
-// }
-
 
 //on click function to save initials and view highscores
 function saveInitials() {
