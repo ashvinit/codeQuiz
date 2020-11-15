@@ -98,10 +98,20 @@ margin-right: auto;
     padding-top: 20%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     #choices {
         min-width: 40rem;
     }
 
-    
+    .quizBox, .startQuiz, .startScreen, #highScoreScreen, h1, #choices {
+        width: 100%;
+        margin-left: 0%;
+        padding: 0px;
+        align-content: center;
+    }
+
+    h1 {
+        font-size: 50px;    
+    }
+
 }
