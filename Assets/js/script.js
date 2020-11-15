@@ -296,7 +296,6 @@ function newScreen() {
 
     trueFans.append(h1El2);
 
-
     for (i = 0; i < localStorage.length; i++) {
 
         localStorage.getItem(highScores[i]);
@@ -305,13 +304,10 @@ function newScreen() {
 
         pEl.textContent = highScores[i].initials + " - " + highScores[i].score;
 
+        console.log(highScores[i]);
+
         userScoreEl.append(pEl);
     }
-
-    
-
-
-
 
 }
 
