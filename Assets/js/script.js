@@ -248,7 +248,7 @@ function saveInitials() {
 
     h1El.innerHTML = " ";
 
-    //
+    //for loop to print out the hgihscores and initals from local storage
     for (i = 0; i < highScores.length; i++) {
 
         var pEl = document.createElement("p");
@@ -265,6 +265,8 @@ function saveInitials() {
     trueFans.append(h1El2);
 
 }
+
+//function to display view highscores screen and retrieve scores from local storage
 
 function newScreen() {
 
