@@ -248,6 +248,7 @@ function saveInitials() {
 
     h1El.innerHTML = " ";
 
+    //
     for (i = 0; i < highScores.length; i++) {
 
         var pEl = document.createElement("p");
@@ -275,9 +276,9 @@ function newScreen() {
 
     trueFans.append(h1El2);
 
-    for (i = 0; i < localStorage.length; i++) {
+    for (i = 0; i < highScores.length; i++) {
 
-        localStorage.getItem(highScores[i]);
+        JSON.parse(localStorage.getItem(highScores[i]));
 
         var pEl = document.createElement("p");
 
