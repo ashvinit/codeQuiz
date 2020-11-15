@@ -103,7 +103,7 @@ margin-right: auto;
         min-width: 40rem;
     }
 
-    .quizBox, .startQuiz, .startScreen, #highScoreScreen, h1, #choices {
+    .quizBox, .startQuiz, .startScreen, #highScoreScreen, h1, #choices, #showQuestions {
         width: 100%;
         margin-left: 0%;
         padding: 0px;

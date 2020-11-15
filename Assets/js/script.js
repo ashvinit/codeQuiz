@@ -100,6 +100,7 @@ var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 //display questions on screen
 function renderQuestion () {
     
+    //if the last question is reached show the score
     if (currentQuestion === myQuestions.length) {
 
         clearInterval(timerInterval);
@@ -117,7 +118,8 @@ function renderQuestion () {
         h1El.innerHTML = "Your Score: " + score;
 
         yourScoreEl.append(h1El);
-
+    
+    //else continue to show questions
     } else {
         
         var q = myQuestions[currentQuestion];
@@ -155,10 +157,13 @@ function startQuiz () {
     //show timer
     timerEl.style.display = "block";
 
+    //hide highScoreScreen
     highScoreScreenEl.style.display = "none";
 
+    //hide add initials 
     addInitialsEl.style.display = "none";
 
+    //empty string to hold score
     h1El2.innerHTML = " ";
 
 
@@ -204,10 +209,6 @@ function checkAnswer(answer) {
         //add score by 200
         score+= 200;
 
-        console.log(score);
-        
-        console.log(counter);
-            
         //go to the next question and initialize timer
         currentQuestion++;
         
@@ -220,8 +221,6 @@ function checkAnswer(answer) {
         //add 1 to counter
         counter++;
         
-        console.log(counter);
-
         //go to the next question and initialize timer
         currentQuestion++;
         
@@ -243,13 +242,7 @@ function saveInitials() {
 
     highScores.push(mostRecentScore);
 
-    console.log(highScores);
-
-    console.log(mostRecentScore);
-    
     localStorage.setItem("highScores", JSON.stringify(highScores));
-
-    console.log(localStorage);
 
     addInitialsEl.style.display = "none";
 
@@ -289,8 +282,6 @@ function newScreen() {
         var pEl = document.createElement("p");
 
         pEl.textContent = highScores[i].initials + " - " + highScores[i].score;
-
-        console.log(highScores[i]);
 
         userScoreEl.append(pEl);
     }
